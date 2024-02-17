@@ -87,8 +87,8 @@ body {
     justify-content: center;
     height:auto;
     padding:32px;
-    background:rgb(114, 64, 106);
-    color:rgb(228, 222, 222);
+    background:rgb(119, 173, 255);
+    color:black;
 
 }
 
@@ -99,6 +99,9 @@ body {
     background:rgb(229, 231, 231);
     flex-grow: 1;
     gap:32px;
+
+
+
 
     .card {
         border:3px solid rgb(168, 166, 166);
@@ -122,6 +125,57 @@ body {
 
 
     }
+}
+
+.bookAdder {
+    background: rgb(189, 189, 250);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding:32px;
+    display:grid;
+    align-content: start;
+    gap:32px;
+
+    .bookForm {
+        border:1px solid black;
+        border-radius: 10px;
+        height: 350px;
+        padding:8px;
+        display:grid;
+        align-content: start;
+        gap:8px;
+
+        p {
+            justify-self: center;
+            margin-bottom: 8px;
+        }
+
+        input {
+            border-radius: 8px;
+            background-color: rgb(219, 215, 215);
+            padding-left:8px;
+        }
+
+        select {
+            border-radius: 8px;
+            background-color: rgb(219, 215, 215);
+            padding-left:8px;
+        }
+    }
+
+    button {
+        height: 48px;
+        border-radius: 8px;
+        background: rgb(119, 173, 255);
+        font-weight: 500;
+
+        &:hover {
+            background-color: rgb(79, 140, 231);
+            transition: 0.3s;
+            color:white;
+        }
+    }
+
 }
 
 .footer {
