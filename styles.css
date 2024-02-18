@@ -141,6 +141,8 @@ body {
     align-content: start;
     gap:32px;
     position:relative;
+    grid-row: span 4;
+    height: fit-content;
 
     .bookForm {
         border:1px solid black;

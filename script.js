@@ -1,3 +1,4 @@
+const myLibrary = [];
 const newBook = document.querySelector(".addBook");
 const bookAdder = document.querySelector('.bookAdder');
 
@@ -101,18 +102,49 @@ newBook.addEventListener('click', () =>{
             reqSpan.textContent = '*Make sure to fill all fields!';
             return
         }
+
+        let title = iptBookTitle.value;
+        let author = iptBookAuthor.value;
+        let pages = iptBookPages.value;
+        let status = iptBookStatus.value;
+
         div.remove();
+
+        var newBook = new Book(title, author, pages, status);
+        myLibrary.push(newBook);
+
+        updateBooks();
+
+        console.table(myLibrary);
+
+
     });
 
 })
 
+//THIS IS THE OBJECT CONSTRUCTOR
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+}
+
+//HERE IS WHERE WE UPDATE THE DOM TO SHOW THE NEW BOOK THAT JUST GOT ADDED TO THE LIBRARY
+
+function updateBooks() {
+    for (let i = 0; i < myLibrary.length; i++) {
+        alert (myLibrary[i].title);
+        
+    }
+}
 
 
 
 
 
 
-// const myLibrary = [];
+
 
 // function Book() {
 //   // the constructor...
