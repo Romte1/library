@@ -1,6 +1,7 @@
 const myLibrary = [];
 const newBook = document.querySelector(".addBook");
 const bookAdder = document.querySelector('.bookAdder');
+const content = document.querySelector('.content');
 
 
 newBook.addEventListener('click', () =>{
@@ -113,7 +114,7 @@ newBook.addEventListener('click', () =>{
         var newBook = new Book(title, author, pages, status);
         myLibrary.push(newBook);
 
-        updateBooks();
+        updateBooks(myLibrary.length-1);
 
         console.table(myLibrary);
 
@@ -123,20 +124,45 @@ newBook.addEventListener('click', () =>{
 })
 
 //THIS IS THE OBJECT CONSTRUCTOR
-function Book(title, author, pages, read) {
+function Book(title, author, pages, status) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.status = status;
 }
 
 //HERE IS WHERE WE UPDATE THE DOM TO SHOW THE NEW BOOK THAT JUST GOT ADDED TO THE LIBRARY
 
-function updateBooks() {
-    for (let i = 0; i < myLibrary.length; i++) {
-        alert (myLibrary[i].title);
+function updateBooks(elementNumber) {
+    // for (let i = 0; i < myLibrary.length; i++) {
+    // }
+        let cardDiv = document.createElement('div');
+        cardDiv.setAttribute('class', 'card');
+
+        let p1 = document.createElement('p');
+        let p2 = document.createElement('p');
+        let p3 = document.createElement('p');
+        let p4 = document.createElement('p');
+
+        p1.textContent = `Title: ${myLibrary[elementNumber].title}`;
+        p2.textContent = `Author: ${myLibrary[elementNumber].author}`;
+        p3.textContent = `Pages: ${myLibrary[elementNumber].pages}`;
+        p4.textContent = `Read?: ${myLibrary[elementNumber].status}`;
         
-    }
+        cardDiv.appendChild(p1);
+        cardDiv.appendChild(p2);
+        cardDiv.appendChild(p3);
+        cardDiv.appendChild(p4);
+        
+
+        content.appendChild(cardDiv);
+        
+
+
+
+        //alert (myLibrary[i].title);
+        
+    
 }
 
 
