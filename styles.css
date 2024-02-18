@@ -123,6 +123,11 @@ body {
             border: none;
         }
 
+        &:hover {
+            scale:1.1;
+            transition: 0.3s;
+        }
+
 
     }
 }
@@ -135,15 +140,17 @@ body {
     display:grid;
     align-content: start;
     gap:32px;
+    position:relative;
 
     .bookForm {
         border:1px solid black;
         border-radius: 10px;
-        height: 350px;
+        height: 380px;
         padding:8px;
         display:grid;
         align-content: start;
         gap:8px;
+        position:relative;
 
         p {
             justify-self: center;
@@ -160,6 +167,18 @@ body {
             border-radius: 8px;
             background-color: rgb(219, 215, 215);
             padding-left:8px;
+        }
+
+        span {
+            color:red;
+            font-size: 12px;
+            top:75%;
+            position:absolute;
+            padding-left: 8px;
+        }
+
+        button {
+            margin-top: 16px;
         }
     }
 
