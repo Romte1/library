@@ -4,6 +4,7 @@ const bookAdder = document.querySelector('.bookAdder');
 const content = document.querySelector('.content');
 
 
+
 newBook.addEventListener('click', () =>{
 
     //this verifies if the form is already showing in the page so we avoid creating duplicated forms!
@@ -65,7 +66,6 @@ newBook.addEventListener('click', () =>{
     iptBookStatus.add(optionYes);
     iptBookStatus.add(optionNo);
     optionNo.selected = true;
-
 
     //REQ VALIDATION SPAN (ONLY SHOWS WHEN FIELDS AREN'T FILLED)
     let reqSpan = document.createElement('span');
@@ -134,8 +134,7 @@ function Book(title, author, pages, status) {
 //HERE IS WHERE WE UPDATE THE DOM TO SHOW THE NEW BOOK THAT JUST GOT ADDED TO THE LIBRARY
 
 function updateBooks(elementNumber) {
-    // for (let i = 0; i < myLibrary.length; i++) {
-    // }
+
         let cardDiv = document.createElement('div');
         cardDiv.setAttribute('class', 'card');
 
@@ -144,24 +143,40 @@ function updateBooks(elementNumber) {
         let p3 = document.createElement('p');
         let p4 = document.createElement('p');
 
+        let delBook = document.createElement('button');
+        delBook.setAttribute('data-index', `${myLibrary.length-1}`)
+
         p1.textContent = `Title: ${myLibrary[elementNumber].title}`;
         p2.textContent = `Author: ${myLibrary[elementNumber].author}`;
         p3.textContent = `Pages: ${myLibrary[elementNumber].pages}`;
         p4.textContent = `Read?: ${myLibrary[elementNumber].status}`;
+        delBook.textContent = 'Remove Book';
         
         cardDiv.appendChild(p1);
         cardDiv.appendChild(p2);
         cardDiv.appendChild(p3);
         cardDiv.appendChild(p4);
+        cardDiv.appendChild(delBook);
         
 
         content.appendChild(cardDiv);
         
+        delBook.addEventListener('click', () =>{
+            let index = delBook.getAttribute('data-index');
+            myLibrary.splice(index, 1);
 
+            //USING THIS forEach WE REMOVE EVERY CARD FROM THE DOM
+            //AND THEN RE-ADD THEM LATER WITH THE FOR LOOP
+            //THIS IS DONE TO UPDATE THE DELETE BUTTON INDEX
+            content.querySelectorAll('.card').forEach(card => {
+                content.removeChild(card);
+            })
 
+            for (let i=0;i<myLibrary.length;i++) {
+                updateBooks(i);
+            }
 
-        //alert (myLibrary[i].title);
-        
+        })
     
 }
 

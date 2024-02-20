@@ -132,8 +132,14 @@ body {
             transition: 0.3s;
         }
 
+        button {
+          background: red;
+          border-radius: 8px;
+        }
+
 
     }
+    
 }
 
 .bookAdder {
@@ -196,6 +202,7 @@ body {
         border-radius: 8px;
         background: rgb(119, 173, 255);
         font-weight: 500;
+        border:none;
 
         &:hover {
             background-color: rgb(79, 140, 231);
