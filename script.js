@@ -149,17 +149,20 @@ function updateBooks(elementNumber) {
         let readStatus = document.createElement('input');
         readStatus.setAttribute('type','checkbox');
 
+
         let lblreadStatus = document.createElement('label');
         lblreadStatus.textContent = 'Read | Not Read';
 
 
         let delBook = document.createElement('button');
-        delBook.setAttribute('data-index', `${myLibrary.length-1}`)
+        delBook.setAttribute('data-index', `${elementNumber}`)
 
         p1.textContent = `Title: ${myLibrary[elementNumber].title}`;
         p2.textContent = `Author: ${myLibrary[elementNumber].author}`;
         p3.textContent = `Pages: ${myLibrary[elementNumber].pages}`;
         p4.textContent = `Read?: ${myLibrary[elementNumber].status}`;
+        myLibrary[elementNumber].status === 'Yes' ? readStatus.checked = true : readStatus.checked = false;
+
         delBook.textContent = 'Remove';
 
         cardOptions.appendChild(readStatus);
@@ -174,6 +177,18 @@ function updateBooks(elementNumber) {
         
 
         content.appendChild(cardDiv);
+
+        readStatus.addEventListener('click', () => {
+            if (readStatus.checked == true) {
+                myLibrary[elementNumber].status = 'Yes';
+                p4.textContent = `Read?: ${myLibrary[elementNumber].status}`
+
+            } else {
+                myLibrary[elementNumber].status = 'No';
+                p4.textContent = `Read?: ${myLibrary[elementNumber].status}`
+            }
+
+        })
         
         delBook.addEventListener('click', () =>{
             let index = delBook.getAttribute('data-index');
