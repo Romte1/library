@@ -136,7 +136,8 @@ function Book(title, author, pages, status) {
 function updateBooks(elementNumber) {
 
         let cardDiv = document.createElement('div');
-        cardDiv.setAttribute('class', 'card');
+        myLibrary[elementNumber].status === 'Yes' ? cardDiv.setAttribute('class', 'card read') : 
+        cardDiv.setAttribute('class', 'card not-read');
 
         let p1 = document.createElement('p');
         let p2 = document.createElement('p');
@@ -179,14 +180,21 @@ function updateBooks(elementNumber) {
         content.appendChild(cardDiv);
 
         readStatus.addEventListener('click', () => {
+
+
+
             if (readStatus.checked == true) {
                 myLibrary[elementNumber].status = 'Yes';
-                p4.textContent = `Read?: ${myLibrary[elementNumber].status}`
+                p4.textContent = `Read?: ${myLibrary[elementNumber].status}`;
+               
 
             } else {
                 myLibrary[elementNumber].status = 'No';
                 p4.textContent = `Read?: ${myLibrary[elementNumber].status}`
             }
+
+            myLibrary[elementNumber].status === 'Yes' ? cardDiv.setAttribute('class', 'card read') : 
+            cardDiv.setAttribute('class', 'card not-read');
 
         })
         

@@ -90,7 +90,7 @@ body {
     justify-content: center;
     height:auto;
     padding:32px;
-    background: linear-gradient(to right, rgba(218, 147, 147, 0.85), rgba(119, 173, 255, 0.85));
+    background: linear-gradient(to right, rgba(218, 147, 147, 0.35), rgba(119, 173, 255, 0.35));
     color:black;
     font-size: max(16px,1.5vw);
 
@@ -106,8 +106,7 @@ body {
 
     .card {
         border:3px solid rgb(168, 166, 166);
-        background:rgb(229, 231, 231);
-        opacity: 85%;
+        background:rgba(229, 231, 229, 0.85);
         display:grid;
         height:250px;
         gap:8px;
@@ -119,7 +118,7 @@ body {
         box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 
         p {
-            border-bottom: 1px solid rgb(192, 189, 189);
+            border-bottom: 1px solid rgb(165, 164, 164);
             padding:4px;
         }
 
@@ -138,7 +137,7 @@ body {
           align-items: stretch;          
           
           button {
-            background: red;
+            background: rgb(228, 19, 19);
             border-radius: 8px;
             border:none;
             color:white;
@@ -158,12 +157,14 @@ body {
 
 
     }
+    .read {
+      background:rgba(174, 245, 174, 0.85);
+    }
     
 }
 
 .bookAdder {
-    background: rgb(158, 162, 182);
-    opacity: 85%;
+    background: rgba(158, 162, 182, 0.85);
     border: 2px solid black;
     border-radius: 10px;
     padding:32px;
@@ -194,6 +195,8 @@ body {
             border-radius: 8px;
             background-color: rgb(219, 215, 215);
             padding-left:8px;
+            border: none;
+            outline:none;
         }
 
         select {
