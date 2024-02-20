@@ -2,8 +2,8 @@ This is a Library webpage I made using HTML, CSS and Javascript, following the a
 
 # Functionalities
 
-- You can add or remove a Book from the Library, visual changes will be done automatically after the action.
-- Can check/uncheck the read status and also select the status when adding the book.
+- You can add or remove a book from the library, visual update reflecting changes will be done automatically after the action.
+- Can check/uncheck the read status and also select the status prior to adding the book to the page.
 
 
 
