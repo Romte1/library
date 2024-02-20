@@ -143,6 +143,16 @@ function updateBooks(elementNumber) {
         let p3 = document.createElement('p');
         let p4 = document.createElement('p');
 
+        let cardOptions = document.createElement('div');
+        cardOptions.setAttribute('class','cardOptions');
+
+        let readStatus = document.createElement('input');
+        readStatus.setAttribute('type','checkbox');
+
+        let lblreadStatus = document.createElement('label');
+        lblreadStatus.textContent = 'Read | Not Read';
+
+
         let delBook = document.createElement('button');
         delBook.setAttribute('data-index', `${myLibrary.length-1}`)
 
@@ -150,13 +160,17 @@ function updateBooks(elementNumber) {
         p2.textContent = `Author: ${myLibrary[elementNumber].author}`;
         p3.textContent = `Pages: ${myLibrary[elementNumber].pages}`;
         p4.textContent = `Read?: ${myLibrary[elementNumber].status}`;
-        delBook.textContent = 'Remove Book';
+        delBook.textContent = 'Remove';
+
+        cardOptions.appendChild(readStatus);
+        cardOptions.appendChild(lblreadStatus);
+        cardOptions.appendChild(delBook);
         
         cardDiv.appendChild(p1);
         cardDiv.appendChild(p2);
         cardDiv.appendChild(p3);
         cardDiv.appendChild(p4);
-        cardDiv.appendChild(delBook);
+        cardDiv.appendChild(cardOptions);
         
 
         content.appendChild(cardDiv);

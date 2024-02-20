@@ -132,10 +132,29 @@ body {
             transition: 0.3s;
         }
 
-        button {
-          background: red;
-          border-radius: 8px;
+        .cardOptions{
+          display:grid;
+          grid-template-columns:auto auto auto;
+          align-items: stretch;          
+          
+          button {
+            background: red;
+            border-radius: 8px;
+            border:none;
+            color:white;
+            font-weight: bold;
+
+            &:hover {
+              scale:1.1;
+            }
+          }
+          label {
+            align-self: center;
+          }
+
+
         }
+
 
 
     }
