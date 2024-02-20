@@ -241,22 +241,39 @@ body {
 
 .footer {
     display:flex;
+    flex-direction: column;
     gap:8px;
     justify-content: center;
-    background:black;
-    opacity: 50%;
+    background:rgba(0, 0, 0,0.5);
     padding:16px;
-    color:white;
+    color:rgba(255, 255, 255,0.5);
+    height:5rem;
+    align-items: center;
+
+    .footer-creator {
+      display: flex;
+      gap:4px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    >p {
+      color:rgba(255, 255, 255,0.5);
+    }
+
+
 }
 
 .githubIcon {
-    color:rgb(219, 0, 0);
-    transition: 0.3s;
-    font-size: 24px;
+    color:rgba(219, 0, 0,0.5);
+    transition: 0.2s;
+    font-size: 32px;
     display: flex;
+    padding:4px;
 }
 
 .githubIcon:hover {
-    color:rgb(97, 12, 146);
+    color:rgba(97, 12, 146,0.5);
     font-size: 24px;
+    font-size: 32px;
 }
