@@ -116,19 +116,18 @@ newBook.addEventListener('click', () =>{
 
         updateBooks(myLibrary.length-1);
 
-        console.table(myLibrary);
-
-
     });
 
 })
 
 //THIS IS THE OBJECT CONSTRUCTOR
-function Book(title, author, pages, status) {
+class Book {
+    constructor (title, author, pages, status){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.status = status;
+    }
 }
 
 //HERE IS WHERE WE UPDATE THE DOM TO SHOW THE NEW BOOK THAT JUST GOT ADDED TO THE LIBRARY
@@ -216,18 +215,3 @@ function updateBooks(elementNumber) {
         })
     
 }
-
-
-
-
-
-
-
-
-// function Book() {
-//   // the constructor...
-// }
-
-// function addBookToLibrary() {
-//   // do stuff here
-// }
